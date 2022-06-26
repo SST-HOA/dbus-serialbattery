@@ -115,6 +115,24 @@ class DbusHelper:
         self._dbusservice.add_path('/System/MinCellVoltage', None, writeable=True,
                                    gettextcallback=lambda p, v: "{:0.3f}V".format(v))
         self._dbusservice.add_path('/System/MinVoltageCellId', None, writeable=True)
+
+        self._dbusservice.add_path('/System/Cell1Voltage', None, writeable=True,gettextcallback=lambda p, v: "{:0.3f}V".format(v))
+        self._dbusservice.add_path('/System/Cell2Voltage', None, writeable=True,gettextcallback=lambda p, v: "{:0.3f}V".format(v))
+        self._dbusservice.add_path('/System/Cell3Voltage', None, writeable=True,gettextcallback=lambda p, v: "{:0.3f}V".format(v))
+        self._dbusservice.add_path('/System/Cell4Voltage', None, writeable=True,gettextcallback=lambda p, v: "{:0.3f}V".format(v))
+        self._dbusservice.add_path('/System/Cell5Voltage', None, writeable=True,gettextcallback=lambda p, v: "{:0.3f}V".format(v))
+        self._dbusservice.add_path('/System/Cell6Voltage', None, writeable=True,gettextcallback=lambda p, v: "{:0.3f}V".format(v))
+        self._dbusservice.add_path('/System/Cell7Voltage', None, writeable=True,gettextcallback=lambda p, v: "{:0.3f}V".format(v))
+        self._dbusservice.add_path('/System/Cell8Voltage', None, writeable=True,gettextcallback=lambda p, v: "{:0.3f}V".format(v))
+        self._dbusservice.add_path('/System/Cell9Voltage', None, writeable=True,gettextcallback=lambda p, v: "{:0.3f}V".format(v))
+        self._dbusservice.add_path('/System/Cell10Voltage', None, writeable=True,gettextcallback=lambda p, v: "{:0.3f}V".format(v))
+        self._dbusservice.add_path('/System/Cell11Voltage', None, writeable=True,gettextcallback=lambda p, v: "{:0.3f}V".format(v))
+        self._dbusservice.add_path('/System/Cell12Voltage', None, writeable=True,gettextcallback=lambda p, v: "{:0.3f}V".format(v))
+        self._dbusservice.add_path('/System/Cell13Voltage', None, writeable=True,gettextcallback=lambda p, v: "{:0.3f}V".format(v))
+        self._dbusservice.add_path('/System/Cell14Voltage', None, writeable=True,gettextcallback=lambda p, v: "{:0.3f}V".format(v))
+        self._dbusservice.add_path('/System/Cell15Voltage', None, writeable=True,gettextcallback=lambda p, v: "{:0.3f}V".format(v))
+        self._dbusservice.add_path('/System/Cell16Voltage', None, writeable=True,gettextcallback=lambda p, v: "{:0.3f}V".format(v))
+
         self._dbusservice.add_path('/History/ChargeCycles', None, writeable=True)
         self._dbusservice.add_path('/History/TotalAhDrawn', None, writeable=True)
         self._dbusservice.add_path('/Balancing', None, writeable=True)
@@ -223,6 +241,23 @@ class DbusHelper:
         self._dbusservice['/System/MinCellVoltage'] = self.battery.get_min_cell_voltage()
         self._dbusservice['/System/MaxCellVoltage'] = self.battery.get_max_cell_voltage()
         self._dbusservice['/Balancing'] = self.battery.get_balancing()
+
+        self._dbusservice['/System/Cell1Voltage'] = self.battery.get_cell_voltage(0)
+        self._dbusservice['/System/Cell2Voltage'] = self.battery.get_cell_voltage(1)
+        self._dbusservice['/System/Cell3Voltage'] = self.battery.get_cell_voltage(2)
+        self._dbusservice['/System/Cell4Voltage'] = self.battery.get_cell_voltage(3)
+        self._dbusservice['/System/Cell5Voltage'] = self.battery.get_cell_voltage(4)
+        self._dbusservice['/System/Cell6Voltage'] = self.battery.get_cell_voltage(5)
+        self._dbusservice['/System/Cell7Voltage'] = self.battery.get_cell_voltage(6)
+        self._dbusservice['/System/Cell8Voltage'] = self.battery.get_cell_voltage(7)
+        self._dbusservice['/System/Cell9Voltage'] = self.battery.get_cell_voltage(8)
+        self._dbusservice['/System/Cell10Voltage'] = self.battery.get_cell_voltage(9)
+        self._dbusservice['/System/Cell11Voltage'] = self.battery.get_cell_voltage(10)
+        self._dbusservice['/System/Cell12Voltage'] = self.battery.get_cell_voltage(11)
+        self._dbusservice['/System/Cell13Voltage'] = self.battery.get_cell_voltage(12)
+        self._dbusservice['/System/Cell14Voltage'] = self.battery.get_cell_voltage(13)
+        self._dbusservice['/System/Cell15Voltage'] = self.battery.get_cell_voltage(14)
+        self._dbusservice['/System/Cell16Voltage'] = self.battery.get_cell_voltage(15)
 
         # Update the alarms
         self._dbusservice['/Alarms/LowVoltage'] = self.battery.protection.voltage_low
